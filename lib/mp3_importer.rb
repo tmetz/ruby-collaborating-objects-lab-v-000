@@ -7,8 +7,8 @@ class MP3Importer
   end
 
   def files
-    my_directory = Dir.new(@path)
-    @files = my_directory.glob("*.mp3")
+    Dir.chdir(@path)
+    @files = Dir.glob("*.mp3")
   end
 
   def import
