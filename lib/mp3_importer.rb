@@ -4,13 +4,12 @@ class MP3Importer
 
   def initialize(filepath)
     @path = filepath
-    @files = files
   end
 
   def files
     Dir.chdir(@path)
-    file_list = Dir.glob("*.mp3")
-    file_list
+    @files = Dir.glob("*.mp3")
+    binding.pry
   end
 
   def import
