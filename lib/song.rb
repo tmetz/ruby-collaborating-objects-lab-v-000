@@ -1,3 +1,5 @@
+require Pry
+
 class Song
   attr_accessor :name, :artist
 
@@ -8,6 +10,7 @@ class Song
   def self.new_by_filename(filename)
     song = self.new(filename.split(" - ")[1])
     song.artist = artistname=(filename.split(" - ")[0])
+    binding.pry
     song
   end
 
